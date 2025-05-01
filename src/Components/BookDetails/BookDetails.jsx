@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router";
 import { TbArrowBack } from "react-icons/tb";
+import { addToStoredReadList } from "../../Utilitys/AddToDb";
 const BookDetails = () => {
   const { bookId } = useParams();
   const data = useLoaderData();
@@ -29,6 +30,12 @@ const BookDetails = () => {
   const goBack =()=>{
     navigate(-1);
   }
+
+  const HandleMarkAsRead = (id)=>{
+    addToStoredReadList(id);
+  }
+
+
   return (
 
   <div className="hero lg:px-10 my-12">
@@ -68,7 +75,7 @@ const BookDetails = () => {
         </div>
 
           <div className="flex my-3">
-          <button className="btn btn-outline btn-primary">Read</button>
+          <button onClick={()=> HandleMarkAsRead(bookId)} className="btn btn-outline btn-primary">Read</button>
           <button className="btn btn-outline btn-secondary ms-6">Wishlist</button>
           <button onClick={goBack} className="btn btn-outline btn-secondary ms-6"><TbArrowBack /></button>
           </div>
