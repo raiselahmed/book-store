@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Book from '../Book/Book';
+import { Helmet } from 'react-helmet-async';
 
 const Books = () => {
     const [books, setBooks] = useState([]);
@@ -10,6 +11,7 @@ const Books = () => {
     },[])
     return (
         <div className='my-20'>
+           
             <h2 className='text-4xl font-bold text-center'>Books</h2>
             <p>books : {books.length}</p>
             <div className=' grid md:grid-cols-2 lg:grid-cols-3 gap-6'>

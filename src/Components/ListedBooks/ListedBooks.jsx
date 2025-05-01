@@ -5,6 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import { getStoredReadList } from "../../Utilitys/AddToDb";
 import Book from "../Book/Book";
 import ListedBook from "../ListedBook/ListedBook";
+import { Helmet } from "react-helmet-async";
 
 const ListedBooks = () => {
     const allBooks = useLoaderData();
@@ -29,6 +30,10 @@ const ListedBooks = () => {
 
   return (
     <div className="my-9">
+        <Helmet>
+            <title>Listed Book</title>
+        </Helmet>
+
       <div>
         <h2 className="text-center text-3xl font-bold">Books</h2>
       </div>

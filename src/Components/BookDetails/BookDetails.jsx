@@ -39,6 +39,7 @@ const BookDetails = () => {
   return (
 
   <div className="hero lg:px-10 my-12">
+    
   <div className="hero-content flex-col lg:flex-row lg:items-stretch">
     <img
       src={image}
